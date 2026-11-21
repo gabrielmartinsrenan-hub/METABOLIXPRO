@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METABOLIX PRO™ | Clinical Thermogenic &amp; Metabolic Support</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        forest: {
+                            950: '#081C15',
+                            900: '#0D2B22',
+                            800: '#154234',
+                            700: '#1E5B48',
+                            100: '#E8F3EF',
+                            50:  '#F3F9F6'
+                        },
+                        cream: '#FAF9F5',
+                        amber: {
+                            500: '#D97706',
+                            400: '#F59E0B',
+                            100: '#FEF3C7'
+                        },
+                        slate: {
+                            850: '#14201C'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Subtle Animations & Glassmorphism */
+        @keyframes floatBottle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .bottle-float {
+            animation: floatBottle 5s ease-in-out infinite;
+        }
+
+        /* Custom Range Slider Styling */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: #D1E3DC;
+            height: 0.5rem;
+            border-radius: 9999px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -6px;
+            background-color: #0D2B22;
+            border: 3px solid #F59E0B;
+            height: 1.25rem;
+            width: 1.25rem;
+            border-radius: 9999px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: transform 0.15s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+
+        /* FAQ Accordion Transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-cream text-forest-950 font-sans antialiased selection:bg-forest-900 selection:text-white">
+
+    <!-- ==================== 1. TOP ANNOUNCEMENT BAR ==================== -->
+    <div class="bg-forest-950 text-white text-xs py-2.5 px-4 text-center font-medium tracking-wide">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <span class="inline-flex items-center gap-1.5 text-amber-400 font-semibold">
+                <i class="fa-solid fa-bolt"></i> FLASH WELLNESS OFFER:
+            </span>
+            <span>Save up to 45% + FREE Priority Shipping on 3 &amp; 6-Bottle Bundles</span>
+            <span class="hidden sm:inline text-white/30">|</span>
+            <span class="underline decoration-amber-400/70 underline-offset-2">60-Day Empty-Bottle Money-Back Guarantee</span>
+        </div>
+    </div>
+
+    <!-- ==================== 2. STICKY CLINICAL-WELLNESS HEADER ==================== -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-forest-900/10 shadow-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3.5 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="#top" class="flex items-center gap-2.5 group">
+                <div class="w-10 h-10 rounded-xl bg-forest-900 text-white flex items-center justify-center shadow-sm group-hover:bg-forest-800 transition-colors">
+                    <svg class="w-6 h-6 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m0-18c-3.5 3-6 7.5-6 11a6 6 0 0012 0c0-3.5-2.5-8-6-11z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10c1.8 1.5 3 3.8 3 5.5a3 3 0 01-6 0c0-1.7 1.2-4 3-5.5z" fill="currentColor" fill-opacity="0.25"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-display font-extrabold text-xl tracking-tight text-forest-950 block leading-none">
+                        METABOLIX <span class="text-forest-700">PRO</span>
+                    </span>
+                    <span class="text-[10px] uppercase tracking-widest text-forest-700/80 font-semibold block mt-0.5">
+                        Clinical Bio-Nutrition
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-forest-900/80">
+                <a href="#science" class="hover:text-forest-950 transition-colors">Science</a>
+                <a href="#ingredients" class="hover:text-forest-950 transition-colors">Ingredients</a>
+                <a href="#calculator" class="hover:text-forest-950 transition-colors">Estimator</a>
+                <a href="#reviews" class="hover:text-forest-950 transition-colors">Results</a>
+                <a href="#faq" class="hover:text-forest-950 transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Right Actions: Cart + Primary CTA -->
+            <div class="flex items-center gap-3">
+                <!-- Interactive Cart Button -->
+                <button id="cart-trigger-btn" type="button" aria-label="Open Shopping Cart"
+                    class="relative p-2.5 rounded-xl bg-forest-50 hover:bg-forest-100 text-forest-900 border border-forest-900/10 transition-colors">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span id="header-cart-badge" class="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-amber-500 text-white text-[11px] font-bold flex items-center justify-center shadow-xs">
+                        0
+                    </span>
+                </button>
+
+                <a href="#bundles" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-display font-bold text-sm shadow-sm transition-all">
+                    <span>Order Now</span>
+                    <i class="fa-solid fa-arrow-right text-xs text-amber-400"></i>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" type="button" aria-label="Menu" class="md:hidden p-2.5 rounded-xl border border-forest-900/15 text-forest-900">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-nav-panel" class="hidden md:hidden bg-white border-t border-forest-900/10 px-4 py-4 space-y-2 text-sm font-medium">
+            <a href="#science" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-forest-50">Science &amp; Mechanism</a>
+            <a href="#ingredients" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-forest-50">Active Ingredients</a>
+            <a href="#calculator" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-forest-50">Weight Loss Estimator</a>
+            <a href="#reviews" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-forest-50">Verified Results</a>
+            <a href="#faq" class="mobile-link block py-2.5 px-3 rounded-lg hover:bg-forest-50">FAQ</a>
+            <a href="#bundles" class="mobile-link block py-3 px-4 rounded-xl bg-forest-900 text-white text-center font-display font-bold mt-2">
+                Claim Bundle Discount &rarr;
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== 3. HIGH-IMPACT HERO SECTION ==================== -->
+    <section id="top" class="relative overflow-hidden bg-gradient-to-b from-forest-50 via-cream to-cream pt-10 pb-20 lg:py-20 border-b border-forest-900/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Sales Copy & Benefits (7 cols) -->
+            <div class="lg:col-span-7 space-y-6">
+                <!-- Social Proof Pill -->
+                <div class="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-forest-900/10 shadow-2xs text-xs">
+                    <div class="flex text-amber-400 text-xs">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="font-bold text-forest-950">4.9 / 5.0</span>
+                    <span class="text-forest-800/70">based on <strong>4,820+</strong> verified customer reviews</span>
+                </div>
+
+                <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-forest-950 tracking-tight leading-[1.08]">
+                    Reignite Your Resting Metabolism &amp; <span class="text-forest-700 underline decoration-amber-400 decoration-4 underline-offset-4">Burn Stubborn Fat</span> Naturally.
+                </h1>
+
+                <p class="text-base sm:text-lg text-forest-900/80 leading-relaxed max-w-2xl">
+                    Formulated with 6 clinically studied botanicals and bioavailable micronutrients to activate brown adipose thermogenesis, silence evening sugar cravings, and sustain jitter-free focus all day.
+                </p>
+
+                <!-- 3 Key Clinical Benefits -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-1">
+                    <div class="p-3.5 rounded-2xl bg-white border border-forest-900/10 shadow-2xs flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-forest-100 text-forest-800 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-sm text-forest-950">Thermogenic Fat Burn</h3>
+                            <p class="text-xs text-forest-800/70 mt-0.5">Boosts resting calorie expenditure</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-white border border-forest-900/10 shadow-2xs flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-sm text-forest-950">Appetite Control</h3>
+                            <p class="text-xs text-forest-800/70 mt-0.5">Balances glucose &amp; curbs cravings</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-white border border-forest-900/10 shadow-2xs flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-forest-100 text-forest-800 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="fa-solid fa-battery-full"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-sm text-forest-950">Clean All-Day Energy</h3>
+                            <p class="text-xs text-forest-800/70 mt-0.5">Zero crash, zero harsh stimulants</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary & Secondary CTAs -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+                    <a href="#bundles" class="px-8 py-4 rounded-2xl bg-forest-900 hover:bg-forest-800 text-white font-display font-bold text-base text-center shadow-lg shadow-forest-900/20 transition-all flex items-center justify-center gap-2.5">
+                        <span>Get METABOLIX PRO — Up to 45% Off</span>
+                        <i class="fa-solid fa-arrow-right text-amber-400"></i>
+                    </a>
+                    <button type="button" onclick="openSupplementModal()" class="px-6 py-4 rounded-2xl bg-white hover:bg-forest-50 text-forest-900 border border-forest-900/15 font-display font-bold text-sm text-center transition-colors">
+                        <i class="fa-solid fa-file-medical mr-1.5 text-forest-700"></i> View Supplement Facts
+                    </button>
+                </div>
+
+                <!-- 4 Clinical Trust Badges -->
+                <div class="pt-4 border-t border-forest-900/10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-semibold text-forest-900/80">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-certificate text-forest-700 text-base"></i>
+                        <span>USA GMP Certified</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-seedling text-forest-700 text-base"></i>
+                        <span>100% Non-GMO</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-flask-vial text-forest-700 text-base"></i>
+                        <span>3rd-Party Lab Tested</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-leaf text-forest-700 text-base"></i>
+                        <span>100% Natural Formula</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Bespoke SVG Supplement Bottle & Capsules Mockup (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+                <!-- Ambient Clinical Glow -->
+                <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-forest-700/15 via-amber-400/15 to-transparent blur-2xl -z-10"></div>
+
+                <!-- Floating Clinical Callout Pill Top-Right -->
+                <div class="self-end sm:mr-6 mb-2 bg-white border border-forest-900/10 shadow-md rounded-2xl px-4 py-2.5 flex items-center gap-2.5 z-10">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    <div class="text-xs">
+                        <span class="font-bold text-forest-950 block">60 Veggie Capsules</span>
+                        <span class="text-forest-700">30-Day Clinical Supply</span>
+                    </div>
+                </div>
+
+                <!-- Custom High-Detail SVG Product Bottle Mockup -->
+                <div class="bottle-float w-full max-w-[330px] sm:max-w-[360px] mx-auto">
+                    <svg viewBox="0 0 380 460" class="w-full h-auto drop-shadow-2xl" role="img" aria-label="METABOLIX PRO Supplement Bottle">
+                        <defs>
+                            <!-- Bottle Glass/HDPE Shading -->
+                            <linearGradient id="bottleBody" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#081C15"/>
+                                <stop offset="22%" stop-color="#154234"/>
+                                <stop offset="50%" stop-color="#0D2B22"/>
+                                <stop offset="85%" stop-color="#071711"/>
+                                <stop offset="100%" stop-color="#0E3026"/>
+                            </linearGradient>
+                            <!-- Metallic Gold Cap Gradient -->
+                            <linearGradient id="goldCap" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#B45309"/>
+                                <stop offset="30%" stop-color="#FBBF24"/>
+                                <stop offset="65%" stop-color="#D97706"/>
+                                <stop offset="100%" stop-color="#92400E"/>
+                            </linearGradient>
+                            <!-- Crisp Off-White Label Gradient -->
+                            <linearGradient id="labelWrap" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#E7E5DF"/>
+                                <stop offset="20%" stop-color="#FFFFFF"/>
+                                <stop offset="78%" stop-color="#FAF9F5"/>
+                                <stop offset="100%" stop-color="#DFDDD6"/>
+                            </linearGradient>
+                            <!-- Capsule Gradient -->
+                            <linearGradient id="capHalf1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#1E5B48"/>
+                                <stop offset="100%" stop-color="#081C15"/>
+                            </linearGradient>
+                            <linearGradient id="capHalf2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#FDE68A"/>
+                                <stop offset="100%" stop-color="#D97706"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Floor Shadow -->
+                        <ellipse cx="190" cy="436" rx="125" ry="14" fill="#081C15" opacity="0.22"/>
+
+                        <!-- Bottle Cap (Ribbed Gold Metallic) -->
+                        <rect x="112" y="24" width="156" height="46" rx="10" fill="url(#goldCap)"/>
+                        <!-- Cap Vertical Ridges -->
+                        <g stroke="#78350F" stroke-width="1.5" opacity="0.45">
+                            <line x1="126" y1="28" x2="126" y2="66"/>
+                            <line x1="138" y1="28" x2="138" y2="66"/>
+                            <line x1="150" y1="28" x2="150" y2="66"/>
+                            <line x1="162" y1="28" x2="162" y2="66"/>
+                            <line x1="174" y1="28" x2="174" y2="66"/>
+                            <line x1="186" y1="28" x2="186" y2="66"/>
+                            <line x1="198" y1="28" x2="198" y2="66"/>
+                            <line x1="210" y1="28" x2="210" y2="66"/>
+                            <line x1="222" y1="28" x2="222" y2="66"/>
+                            <line x1="234" y1="28" x2="234" y2="66"/>
+                            <line x1="246" y1="28" x2="246" y2="66"/>
+                            <line x1="256" y1="28" x2="256" y2="66"/>
+                        </g>
+
+                        <!-- Bottle Neck Collar -->
+                        <rect x="122" y="70" width="136" height="16" fill="#081C15"/>
+
+                        <!-- Bottle Shoulders & Main Cylinder -->
+                        <path d="M122 86 C92 94, 82 114, 82 138 L82 402 C82 418, 94 428, 112 428 L268 428 C286 428, 298 418, 298 402 L298 138 C298 114, 288 94, 258 86 Z" fill="url(#bottleBody)"/>
+
+                        <!-- Subtle Specular Highlight on Bottle Shoulder -->
+                        <path d="M114 96 C98 104, 94 118, 94 136 L94 398" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.14" fill="none"/>
+
+                        <!-- Clinical Wrap-Around Label -->
+                        <rect x="82" y="142" width="216" height="248" fill="url(#labelWrap)"/>
+                        <!-- Gold Top & Bottom Trim Lines on Label -->
+                        <rect x="82" y="142" width="216" height="6" fill="#D97706"/>
+                        <rect x="82" y="384" width="216" height="6" fill="#D97706"/>
+
+                        <!-- Label Content -->
+                        <g text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif">
+                            <!-- Top Clinical Tag -->
+                            <rect x="132" y="158" width="116" height="18" rx="9" fill="#0D2B22"/>
+                            <text x="190" y="170" fill="#FBBF24" font-size="8.5" font-weight="700" letter-spacing="1.4">CLINICAL FORMULA</text>
+
+                            <!-- Brand Title -->
+                            <text x="190" y="206" fill="#081C15" font-size="25" font-weight="800" letter-spacing="0.5">METABOLIX</text>
+                            <text x="190" y="229" fill="#1E5B48" font-size="20" font-weight="800" letter-spacing="3">PRO™</text>
+
+                            <!-- Divider -->
+                            <line x1="125" y1="241" x2="255" y2="241" stroke="#0D2B22" stroke-opacity="0.18" stroke-width="1"/>
+
+                            <!-- Subtitle -->
+                            <text x="190" y="259" fill="#0D2B22" font-size="9.5" font-weight="700" letter-spacing="0.8">ADVANCED THERMOGENIC &amp;</text>
+                            <text x="190" y="272" fill="#0D2B22" font-size="9.5" font-weight="700" letter-spacing="0.8">METABOLIC SUPPORT</text>
+
+                            <!-- Key Actives Pills on Label -->
+                            <rect x="104" y="286" width="172" height="22" rx="6" fill="#E8F3EF"/>
+                            <text x="190" y="300" fill="#0D2B22" font-size="8.5" font-weight="700">EGCG Phytosome + Berberine HCl</text>
+
+                            <rect x="104" y="313" width="172" height="22" rx="6" fill="#FEF3C7"/>
+                            <text x="190" y="327" fill="#92400E" font-size="8.5" font-weight="700">Grains of Paradise + Chromium</text>
+
+                            <!-- Bottom Dosage & Count -->
+                            <text x="190" y="357" fill="#081C15" font-size="11" font-weight="800">60 VEGGIE CAPSULES</text>
+                            <text x="190" y="372" fill="#1E5B48" font-size="8.5" font-weight="600" letter-spacing="1">DIETARY SUPPLEMENT • NON-GMO</text>
+                        </g>
+
+                        <!-- Two Realistic 3D-Shaded Capsules in Foreground -->
+                        <g transform="translate(56, 392) rotate(-24)">
+                            <rect x="0" y="0" width="54" height="22" rx="11" fill="url(#capHalf2)" stroke="#92400E" stroke-width="0.8"/>
+                            <path d="M27 0 L43 0 A11 11 0 0 1 43 22 L27 22 Z" fill="url(#capHalf1)"/>
+                            <line x1="8" y1="6" x2="44" y2="6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+                        </g>
+
+                        <g transform="translate(274, 378) rotate(32)">
+                            <rect x="0" y="0" width="54" height="22" rx="11" fill="url(#capHalf1)" stroke="#081C15" stroke-width="0.8"/>
+                            <path d="M27 0 L43 0 A11 11 0 0 1 43 22 L27 22 Z" fill="url(#capHalf2)"/>
+                            <line x1="8" y1="6" x2="44" y2="6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.35"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. INTERACTIVE METABOLIC & WEIGHT LOSS ESTIMATOR ==================== -->
+    <section id="calculator" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-white rounded-3xl border border-forest-900/10 shadow-xl overflow-hidden">
+            <div class="bg-forest-900 text-white px-6 sm:px-10 py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-amber-400 font-bold block mb-1">Personalized Metabolic Projection</span>
+                    <h2 class="font-display font-extrabold text-2xl sm:text-3xl">Weight Loss &amp; Supply Estimator</h2>
+                </div>
+                <span class="text-xs bg-white/10 px-3.5 py-2 rounded-xl text-forest-100">
+                    <i class="fa-solid fa-calculator mr-1.5 text-amber-400"></i> Adjust sliders to calculate your protocol
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Controls (7 cols) -->
+                <div class="lg:col-span-7 space-y-7">
+                    <!-- Current Weight Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="current-weight" class="font-display font-bold text-sm text-forest-950">Current Weight</label>
+                            <span class="px-3 py-1 rounded-lg bg-forest-50 text-forest-900 font-display font-extrabold text-base border border-forest-900/10">
+                                <span id="current-weight-val">185</span> lbs
+                            </span>
+                        </div>
+                        <input type="range" id="current-weight" min="110" max="340" value="185" class="w-full">
+                        <div class="flex justify-between text-[11px] text-forest-700/70 mt-1">
+                            <span>110 lbs</span>
+                            <span>225 lbs</span>
+                            <span>340 lbs</span>
+                        </div>
+                    </div>
+
+                    <!-- Goal Weight Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="goal-weight" class="font-display font-bold text-sm text-forest-950">Target Goal Weight</label>
+                            <span class="px-3 py-1 rounded-lg bg-amber-100/70 text-amber-900 font-display font-extrabold text-base border border-amber-500/20">
+                                <span id="goal-weight-val">160</span> lbs
+                            </span>
+                        </div>
+                        <input type="range" id="goal-weight" min="100" max="300" value="160" class="w-full">
+                        <div class="flex justify-between text-[11px] text-forest-700/70 mt-1">
+                            <span>100 lbs</span>
+                            <span>200 lbs</span>
+                            <span>300 lbs</span>
+                        </div>
+                    </div>
+
+                    <!-- Activity Level Selector -->
+                    <div>
+                        <label class="font-display font-bold text-sm text-forest-950 block mb-3">Daily Activity Level</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="activity-buttons">
+                            <button type="button" data-multiplier="1.25" class="activity-btn p-3.5 rounded-xl border border-forest-900/15 text-left hover:border-forest-900 transition-all">
+                                <span class="font-display font-bold text-sm block text-forest-950">Sedentary</span>
+                                <span class="text-xs text-forest-700/80">Desk job, minimal exercise</span>
+                            </button>
+                            <button type="button" data-multiplier="1.0" class="activity-btn active p-3.5 rounded-xl border-2 border-forest-900 bg-forest-50 text-left transition-all">
+                                <span class="font-display font-bold text-sm block text-forest-950">Moderate</span>
+                                <span class="text-xs text-forest-700/80">2–3 light workouts / week</span>
+                            </button>
+                            <button type="button" data-multiplier="0.85" class="activity-btn p-3.5 rounded-xl border border-forest-900/15 text-left hover:border-forest-900 transition-all">
+                                <span class="font-display font-bold text-sm block text-forest-950">Active</span>
+                                <span class="text-xs text-forest-700/80">4+ workouts / week</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Dynamic Projection Output Card (5 cols) -->
+                <div class="lg:col-span-5 bg-forest-50 rounded-2xl p-6 sm:p-8 border border-forest-900/10 space-y-6">
+                    <div class="flex items-center justify-between border-b border-forest-900/10 pb-4">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider text-forest-700 font-semibold block">Target Reduction</span>
+                            <span class="font-display font-extrabold text-3xl text-forest-950"><span id="calc-loss-lbs">25</span> lbs</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs uppercase tracking-wider text-forest-700 font-semibold block">Est. Timeline</span>
+                            <span class="font-display font-extrabold text-3xl text-amber-600"><span id="calc-weeks">14</span> Weeks</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2.5 text-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-forest-800/80">Daily Thermogenic Boost:</span>
+                            <span class="font-bold text-forest-950" id="calc-kcal">+260 kcal / day</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-forest-800/80">Recommended Protocol:</span>
+                            <span class="px-2.5 py-0.5 rounded-md bg-forest-900 text-amber-400 font-bold text-xs" id="calc-bundle-name">3-Bottle Protocol (90 Days)</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-forest-800/75 leading-relaxed bg-white p-3.5 rounded-xl border border-forest-900/10">
+                        <i class="fa-solid fa-circle-info text-forest-700 mr-1"></i>
+                        Clinical data shows optimal brown adipose tissue adaptation occurs between <strong>90 to 180 days</strong> of consistent daily intake.
+                    </p>
+
+                    <button type="button" id="calc-add-btn" class="w-full py-3.5 px-5 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-display font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                        <span>Add Recommended Protocol to Cart</span>
+                        <i class="fa-solid fa-cart-plus text-amber-400"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. SCIENCE & 3-STEP MECHANISM ==================== -->
+    <section id="science" class="py-20 bg-forest-950 text-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-xs uppercase tracking-widest text-amber-400 font-bold block mb-2">Triple-Pathway Metabolic Architecture</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight mb-4">
+                    Why Traditional Diets Stall—And How METABOLIX PRO™ Fixes It
+                </h2>
+                <p class="text-forest-100/80 text-base leading-relaxed">
+                    Restrictive dieting triggers adaptive thermogenesis, slowing your resting metabolic rate by up to 22%. Our three-phase bio-complex keeps your metabolic engine running at peak efficiency.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="p-8 rounded-3xl bg-forest-900/80 border border-white/10 relative">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 font-display font-extrabold text-xl flex items-center justify-center mb-6 border border-amber-400/30">
+                        01
+                    </div>
+                    <h3 class="font-display font-bold text-2xl mb-3">Ignite Thermogenesis</h3>
+                    <p class="text-sm text-forest-100/80 leading-relaxed mb-5">
+                        Standardized <strong>Grains of Paradise (6-Paradol)</strong> and phytosome-bound <strong>Green Tea EGCG</strong> activate brown adipose tissue (BAT), converting stored white triglycerides into clean thermal energy.
+                    </p>
+                    <div class="pt-4 border-t border-white/10 text-xs text-amber-400 font-semibold">
+                        <i class="fa-solid fa-chart-line mr-1.5"></i> +14.8% Resting Metabolic Expenditure*
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="p-8 rounded-3xl bg-forest-900/80 border border-white/10 relative">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 font-display font-extrabold text-xl flex items-center justify-center mb-6 border border-amber-400/30">
+                        02
+                    </div>
+                    <h3 class="font-display font-bold text-2xl mb-3">Curb Evening Cravings</h3>
+                    <p class="text-sm text-forest-100/80 leading-relaxed mb-5">
+                        <strong>Berberine HCl</strong> and <strong>Chromium Picolinate</strong> support healthy post-meal insulin sensitivity, flattening blood sugar spikes that trigger late-night carb cravings.
+                    </p>
+                    <div class="pt-4 border-t border-white/10 text-xs text-amber-400 font-semibold">
+                        <i class="fa-solid fa-check-double mr-1.5"></i> Supports Balanced Fasting Glucose*
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="p-8 rounded-3xl bg-forest-900/80 border border-white/10 relative">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 font-display font-extrabold text-xl flex items-center justify-center mb-6 border border-amber-400/30">
+                        03
+                    </div>
+                    <h3 class="font-display font-bold text-2xl mb-3">Sustain Cellular Energy</h3>
+                    <p class="text-sm text-forest-100/80 leading-relaxed mb-5">
+                        Unlike harsh fat burners overloaded with synthetic caffeine, <strong>L-Theanine</strong> pairs with natural green tea polyphenols to promote alpha-wave focus and steady mitochondrial ATP output.
+                    </p>
+                    <div class="pt-4 border-t border-white/10 text-xs text-amber-400 font-semibold">
+                        <i class="fa-solid fa-bolt-lightning mr-1.5"></i> Zero Jitters, Anxiety, or Afternoon Crash*
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. TRANSPARENT INGREDIENTS & SUPPLEMENT FACTS ==================== -->
+    <section id="ingredients" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-forest-700 font-bold block mb-2">100% Transparent Label • Zero Proprietary Blends</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-forest-950">Six Clinically Dosed Active Ingredients</h2>
+            </div>
+            <button type="button" onclick="openSupplementModal()" class="self-start md:self-auto px-5 py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-display font-bold text-xs uppercase tracking-wider transition-colors shadow-sm">
+                <i class="fa-solid fa-table-list mr-2 text-amber-400"></i> Open Full Supplement Facts Panel
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Ingredient 1 -->
+            <div class="p-6 rounded-2xl bg-white border border-forest-900/10 shadow-2xs hover:border-forest-700/40 transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-forest-100 text-forest-900 font-display font-bold text-xs">300 mg / serving</span>
+                    <i class="fa-solid fa-leaf text-forest-700"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-forest-950 mb-1.5">Green Tea Phytosome (EGCG)</h3>
+                <p class="text-sm text-forest-800/80 leading-relaxed">
+                    Phospholipid-bound decaffeinated green tea extract clinically shown to deliver 3x higher EGCG absorption to accelerate lipid oxidation.
+                </p>
+            </div>
+
+            <!-- Ingredient 2 -->
+            <div class="p-6 rounded-2xl bg-white border border-forest-900/10 shadow-2xs hover:border-forest-700/40 transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-forest-100 text-forest-900 font-display font-bold text-xs">400 mg / serving</span>
+                    <i class="fa-solid fa-dna text-forest-700"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-forest-950 mb-1.5">Berberine HCl (97% Pure)</h3>
+                <p class="text-sm text-forest-800/80 leading-relaxed">
+                    Activates AMPK—the body’s master metabolic switch—supporting healthy insulin response, lipid metabolism, and gut microbiome balance.
+                </p>
+            </div>
+
+            <!-- Ingredient 3 -->
+            <div class="p-6 rounded-2xl bg-white border border-forest-900/10 shadow-2xs hover:border-forest-700/40 transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 font-display font-bold text-xs">40 mg / serving</span>
+                    <i class="fa-solid fa-fire text-amber-600"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-forest-950 mb-1.5">Grains of Paradise (12.5% 6-Paradol)</h3>
+                <p class="text-sm text-forest-800/80 leading-relaxed">
+                    A non-stimulant West African botanical proven in human clinical trials to activate brown adipose tissue and reduce visceral abdominal fat.
+                </p>
+            </div>
+
+            <!-- Ingredient 4 -->
+            <div class="p-6 rounded-2xl bg-white border border-forest-900/10 shadow-2xs hover:border-forest-700/40 transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-forest-100 text-forest-900 font-display font-bold text-xs">200 mcg / serving</span>
+                    <i class="fa-solid fa-scale-balanced text-forest-700"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-forest-950 mb-1.5">Chromium Picolinate</h3>
+                <p class="text-sm text-forest-800/80 leading-relaxed">
+                    Essential trace mineral that enhances carbohydrate utilization and significantly reduces late-afternoon sweet cravings and emotional snacking.
+                </p>
+            </div>
+
+            <!-- Ingredient 5 -->
+            <div class="p-6 rounded-2xl bg-white border border-forest-900/10 shadow-2xs hover:border-forest-700/40 transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-forest-100 text-forest-900 font-display font-bold text-xs">150 mg / serving</span>
+                    <i class="fa-solid fa-brain text-forest-700"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-forest-950 mb-1.5">Pure L-Theanine</h3>
+                <p class="text-sm text-forest-800/80 leading-relaxed">
+                    Amino acid naturally found in shade-grown tea leaves that smooths cortisol stress responses—preventing stress-induced belly fat storage.
+                </p>
+            </div>
+
+            <!-- Ingredient 6 -->
+            <div class="p-6 rounded-2xl bg-white border border-forest-900/10 shadow-2xs hover:border-forest-700/40 transition-all">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-amber-100 text-amber-900 font-display font-bold text-xs">250 mg / serving</span>
+                    <i class="fa-solid fa-apple-whole text-amber-600"></i>
+                </div>
+                <h3 class="font-display font-bold text-lg text-forest-950 mb-1.5">Apple Cider Vinegar Powder (with Mother)</h3>
+                <p class="text-sm text-forest-800/80 leading-relaxed">
+                    Delivers concentrated acetic acid without tooth enamel erosion, promoting gastric satiety, lighter digestion, and reduced bloating.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. VERIFIED CUSTOMER TRANSFORMATIONS & REVIEWS ==================== -->
+    <section id="reviews" class="py-20 bg-forest-50 border-y border-forest-900/10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-forest-700 font-bold block mb-2">Real Stories • Verified Buyers</span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-forest-950">4,820+ Verified Customer Transformations</h2>
+                </div>
+
+                <!-- Filterable Review Tags -->
+                <div id="review-filters" class="flex flex-wrap gap-2">
+                    <button type="button" data-tag="all" class="rev-filter-btn active px-4 py-2 rounded-full text-xs font-bold bg-forest-900 text-white transition-colors">
+                        All Reviews (4,820)
+                    </button>
+                    <button type="button" data-tag="fat-loss" class="rev-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-white text-forest-900 border border-forest-900/15 hover:border-forest-900 transition-colors">
+                        Stubborn Fat Loss
+                    </button>
+                    <button type="button" data-tag="cravings" class="rev-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-white text-forest-900 border border-forest-900/15 hover:border-forest-900 transition-colors">
+                        Craving Control
+                    </button>
+                    <button type="button" data-tag="energy" class="rev-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-white text-forest-900 border border-forest-900/15 hover:border-forest-900 transition-colors">
+                        Clean Energy
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reviews Grid -->
+            <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 8. 3-TIER BUNDLE PRICING SELECTOR ==================== -->
+    <section id="bundles" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="inline-block px-3.5 py-1 rounded-full bg-amber-100 text-amber-900 font-display font-bold text-xs uppercase tracking-wider mb-3">
+                Limited Batch Inventory • Ships Within 24 Hours
+            </span>
+            <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-forest-950 mb-3">
+                Choose Your Metabolic Protocol
+            </h2>
+            <p class="text-sm sm:text-base text-forest-800/80">
+                Every order is protected by our ironclad <strong>60-Day 100% Money-Back Guarantee</strong>. Try it risk-free.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            
+            <!-- TIER 1: 1 BOTTLE STARTER -->
+            <div class="rounded-3xl bg-white border border-forest-900/15 p-7 sm:p-8 flex flex-col justify-between shadow-sm">
+                <div>
+                    <div class="text-center pb-6 border-b border-forest-900/10">
+                        <span class="text-xs font-bold uppercase tracking-widest text-forest-700">30-Day Supply</span>
+                        <h3 class="font-display font-extrabold text-2xl text-forest-950 mt-1">1 Bottle Starter</h3>
+                        
+                        <!-- Mini Single Bottle SVG Icon -->
+                        <div class="my-5 flex justify-center">
+                            <svg class="w-16 h-20" viewBox="0 0 80 100">
+                                <rect x="24" y="6" width="32" height="10" rx="2" fill="#D97706"/>
+                                <rect x="18" y="18" width="44" height="74" rx="8" fill="#0D2B22"/>
+                                <rect x="18" y="34" width="44" height="42" fill="#FAF9F5"/>
+                                <text x="40" y="54" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="800" fill="#0D2B22">1X</text>
+                                <text x="40" y="65" text-anchor="middle" font-family="sans-serif" font-size="6" font-weight="700" fill="#1E5B48">PRO</text>
+                            </svg>
+                        </div>
+
+                        <div class="flex items-baseline justify-center gap-2">
+                            <span class="font-display font-extrabold text-4xl text-forest-950">$69</span>
+                            <span class="text-sm text-forest-800/70">/ bottle</span>
+                        </div>
+                        <p class="text-xs text-forest-700 mt-1">Retail <span class="line-through">$89</span> &bull; You Save $20</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-forest-900/85 my-6">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-check text-forest-700"></i>
+                            <span>60 Capsules (30-Day Supply)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-check text-forest-700"></i>
+                            <span>One-Time Purchase (No Auto-Ship)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-check text-forest-700"></i>
+                            <span>60-Day Money-Back Guarantee</span>
+                        </li>
+                        <li class="flex items-center gap-2.5 text-forest-700/70">
+                            <i class="fa-solid fa-truck"></i>
+                            <span>+$7.95 Standard Tracked Shipping</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" onclick="addBundleToCart('starter')"
+                    class="w-full py-4 rounded-2xl border-2 border-forest-900 text-forest-900 hover:bg-forest-900 hover:text-white font-display font-bold text-sm transition-all">
+                    Add 1 Bottle — $69
+                </button>
+            </div>
+
+            <!-- TIER 3 (CENTER HIGHLIGHT): 6 BOTTLES BEST VALUE -->
+            <div class="rounded-3xl bg-forest-950 text-white border-2 border-amber-400 p-7 sm:p-8 flex flex-col justify-between shadow-2xl relative lg:-translate-y-3">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-amber-400 text-forest-950 font-display font-extrabold text-xs uppercase tracking-wider shadow-md whitespace-nowrap">
+                    <i class="fa-solid fa-crown mr-1"></i> Best Value • Save $240
+                </div>
+
+                <div>
+                    <div class="text-center pb-6 border-b border-white/15 pt-2">
+                        <span class="text-xs font-bold uppercase tracking-widest text-amber-400">180-Day Full Transformation</span>
+                        <h3 class="font-display font-extrabold text-2xl text-white mt-1">6 Bottles Protocol</h3>
+
+                        <!-- 6-Bottle Cluster SVG -->
+                        <div class="my-5 flex justify-center">
+                            <svg class="w-44 h-20" viewBox="0 0 180 100">
+                                <!-- Back Row -->
+                                <g transform="translate(18, 0) scale(0.85)" opacity="0.75">
+                                    <rect x="24" y="6" width="32" height="10" rx="2" fill="#D97706"/>
+                                    <rect x="18" y="18" width="44" height="74" rx="8" fill="#1E5B48"/>
+                                    <rect x="18" y="34" width="44" height="42" fill="#FAF9F5"/>
+                                </g>
+                                <g transform="translate(56, 0) scale(0.85)" opacity="0.75">
+                                    <rect x="24" y="6" width="32" height="10" rx="2" fill="#D97706"/>
+                                    <rect x="18" y="18" width="44" height="74" rx="8" fill="#1E5B48"/>
+                                    <rect x="18" y="34" width="44" height="42" fill="#FAF9F5"/>
+                                </g>
+                                <g transform="translate(94, 0) scale(0.85)" opacity="0.75">
+                                    <rect x="24" y="6" width="32" height="10" rx="2" fill="#D97706"/>
+                                    <rect x="18" y="18" width="44" height="74" rx="8" fill="#1E5B48"/>
+                                    <rect x="18" y="34" width="44" height="42" fill="#FAF9F5"/>
+                                </g>
+                                <!-- Front Row -->
+                                <g transform="translate(10, 10) scale(0.92)">
+                                    <rect x="24" y="6" width="32" height="10" rx="2" fill="#FBBF24"/>
+                                    <rect x="18" y="18" width="44" height="74" rx="8" fill="#154234" stroke="#FBBF24" stroke-width="1"/>
+                                    <rect x="18" y="34" width="44" height="42" fill="#FFFFFF"/>
+                                </g>
+                                <g transform="translate(53, 8) scale(0.96)">
+                                    <rect x="24" y="6" width="32" height="10" rx="2" fill="#FBBF24"/>
+                                    <rect x="18" y="18" width="44" height="74" rx="8" fill="#154234" stroke="#FBBF24" stroke-width="1.2"/>
+                                    <rect x="18" y="34" width="44" height="42" fill="#FFFFFF"/>
+                                    <text x="40" y="58" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#081C15">6X</text>
+                                </g>
+                                <g transform="translate(98, 10) scale(0.92)">
+                                    <rect x="24" y="6" width="32" height="10" rx="2" fill="#FBBF24"/>
+                                    <rect x="18" y="18" width="44" height="74" rx="8" fill="#154234" stroke="#FBBF24" stroke-width="1"/>
+                                    <rect x="18" y="34" width="44" height="42" fill="#FFFFFF"/>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div class="flex items-baseline justify-center gap-2">
+                            <span class="font-display font-extrabold text-5xl text-white">$49</span>
+                            <span class="text-sm text-forest-100/80">/ bottle</span>
+                        </div>
+                        <p class="text-xs text-amber-400 font-semibold mt-1.5">Total: $294 (Retail <span class="line-through text-white/50">$534</span>)</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-forest-50 my-6">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span><strong>360 Capsules</strong> (6 Full Bottles)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span><strong>FREE</strong> Priority Tracked Shipping ($15 Value)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-gift text-amber-400"></i>
+                            <span><strong>BONUS #1:</strong> 21-Day Metabolic Reset Meal Guide</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-gift text-amber-400"></i>
+                            <span><strong>BONUS #2:</strong> Anti-Craving Evening Elixir Recipes</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-amber-400"></i>
+                            <span>60-Day Empty-Bottle Money-Back Guarantee</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" onclick="addBundleToCart('best')"
+                    class="w-full py-4 rounded-2xl bg-amber-400 hover:bg-amber-300 text-forest-950 font-display font-extrabold text-base shadow-lg transition-all flex items-center justify-center gap-2">
+                    <span>Add 6 Bottles — $294</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- TIER 2: 3 BOTTLES MOST POPULAR -->
+            <div class="rounded-3xl bg-white border-2 border-forest-800 p-7 sm:p-8 flex flex-col justify-between shadow-lg relative">
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-0.5 rounded-full bg-forest-800 text-white font-display font-bold text-[11px] uppercase tracking-wider">
+                    Most Popular
+                </div>
+
+                <div>
+                    <div class="text-center pb-6 border-b border-forest-900/10 pt-1">
+                        <span class="text-xs font-bold uppercase tracking-widest text-forest-700">90-Day Metabolic Reset</span>
+                        <h3 class="font-display font-extrabold text-2xl text-forest-950 mt-1">3 Bottles Bundle</h3>
+
+                        <!-- 3-Bottle Cluster SVG -->
+                        <div class="my-5 flex justify-center">
+                            <svg class="w-32 h-20" viewBox="0 0 130 100">
+                                <g transform="translate(6, 6) scale(0.9)">
+                                    <rect x="24" y="6" width="32" height="10" rx="2" fill="#D97706"/>
+                                    <rect x="18" y="18" width="44" height="74" rx="8" fill="#154234"/>
+                                    <rect x="18" y="34" width="44" height="42" fill="#FAF9F5"/>
+                                </g>
+                                <g transform="translate(46, 6) scale(0.9)">
+                                    <rect x="24" y="6" width="32" height="10" rx="2" fill="#D97706"/>
+                                    <rect x="18" y="18" width="44" height="74" rx="8" fill="#154234"/>
+                                    <rect x="18" y="34" width="44" height="42" fill="#FAF9F5"/>
+                                </g>
+                                <g transform="translate(25, 2)">
+                                    <rect x="24" y="6" width="32" height="10" rx="2" fill="#FBBF24"/>
+                                    <rect x="18" y="18" width="44" height="74" rx="8" fill="#0D2B22"/>
+                                    <rect x="18" y="34" width="44" height="42" fill="#FFFFFF"/>
+                                    <text x="40" y="58" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#0D2B22">3X</text>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div class="flex items-baseline justify-center gap-2">
+                            <span class="font-display font-extrabold text-4xl text-forest-950">$59</span>
+                            <span class="text-sm text-forest-800/70">/ bottle</span>
+                        </div>
+                        <p class="text-xs text-forest-700 font-semibold mt-1">Total: $177 (Save $90 Today)</p>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-forest-900/85 my-6">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-check text-forest-700"></i>
+                            <span><strong>180 Capsules</strong> (3 Full Bottles)</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-check text-forest-700"></i>
+                            <span><strong>FREE</strong> U.S. Tracked Shipping Included</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-gift text-amber-600"></i>
+                            <span><strong>FREE BONUS:</strong> 21-Day Metabolic Meal Guide</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-check text-forest-700"></i>
+                            <span>60-Day Money-Back Guarantee</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <button type="button" onclick="addBundleToCart('popular')"
+                    class="w-full py-4 rounded-2xl bg-forest-900 hover:bg-forest-800 text-white font-display font-bold text-sm shadow-md transition-all">
+                    Add 3 Bottles — $177
+                </button>
+            </div>
+        </div>
+
+        <!-- 60-Day Guarantee Seal Banner -->
+        <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-white border border-forest-900/10 flex flex-col md:flex-row items-center gap-6 shadow-xs">
+            <div class="w-20 h-20 rounded-full bg-forest-900 text-amber-400 flex flex-col items-center justify-center shrink-0 border-4 border-amber-400/40 shadow-md">
+                <span class="font-display font-extrabold text-xl leading-none">60</span>
+                <span class="text-[9px] uppercase tracking-widest font-bold text-white mt-0.5">DAYS</span>
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="font-display font-extrabold text-xl text-forest-950 mb-1">100% Ironclad Empty-Bottle Satisfaction Guarantee</h3>
+                <p class="text-sm text-forest-800/80 leading-relaxed">
+                    Put METABOLIX PRO™ to the test for a full 60 days. If you don’t feel lighter, experience fewer evening sugar cravings, and notice smoother daily energy, simply contact our U.S. support team for a prompt, no-questions-asked refund—even if the bottles are completely empty.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 9. INTERACTIVE FAQ ACCORDION ==================== -->
+    <section id="faq" class="py-20 bg-white border-t border-forest-900/10 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs uppercase tracking-widest text-forest-700 font-bold block mb-2">Got Questions?</span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-forest-950">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-3.5" id="faq-accordion">
+                <!-- FAQ 1 -->
+                <div class="faq-item rounded-2xl border border-forest-900/15 bg-cream/60 overflow-hidden">
+                    <button type="button" class="faq-trigger w-full px-6 py-4.5 text-left flex items-center justify-between gap-4 font-display font-bold text-base text-forest-950">
+                        <span>How do I take METABOLIX PRO™ for maximum results?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-forest-700 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-sm text-forest-800/85 leading-relaxed">
+                        <p class="pb-5">Take two (2) easy-to-swallow veggie capsules each morning with a full 8–12 oz glass of water 20 minutes before breakfast. Consistent daily intake allows EGCG phytosome, Berberine, and Grains of Paradise to build cumulative thermogenic and glucose-balancing support.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item rounded-2xl border border-forest-900/15 bg-cream/60 overflow-hidden">
+                    <button type="button" class="faq-trigger w-full px-6 py-4.5 text-left flex items-center justify-between gap-4 font-display font-bold text-base text-forest-950">
+                        <span>Does it contain harsh caffeine or cause jitters?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-forest-700 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-sm text-forest-800/85 leading-relaxed">
+                        <p class="pb-5">No. Unlike conventional fat burners loaded with synthetic anhydrous caffeine, METABOLIX PRO™ uses decaffeinated Green Tea Phytosome paired with 150 mg of pure L-Theanine and non-stimulant Grains of Paradise. You get clean, calm metabolic energy without racing heart rate or afternoon crashes.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item rounded-2xl border border-forest-900/15 bg-cream/60 overflow-hidden">
+                    <button type="button" class="faq-trigger w-full px-6 py-4.5 text-left flex items-center justify-between gap-4 font-display font-bold text-base text-forest-950">
+                        <span>Is this a one-time payment or a recurring subscription?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-forest-700 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-sm text-forest-800/85 leading-relaxed">
+                        <p class="pb-5">100% One-Time Purchase. There are no hidden subscriptions, auto-ship traps, or recurring billing charges. When you want to reorder, you simply return to our store.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item rounded-2xl border border-forest-900/15 bg-cream/60 overflow-hidden">
+                    <button type="button" class="faq-trigger w-full px-6 py-4.5 text-left flex items-center justify-between gap-4 font-display font-bold text-base text-forest-950">
+                        <span>How fast will my order ship?</span>
+                        <i class="fa-solid fa-chevron-down faq-icon text-xs text-forest-700 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 text-sm text-forest-800/85 leading-relaxed">
+                        <p class="pb-5">All orders placed before 2:00 PM EST ship the same business day from our FDA-registered, GMP-certified fulfillment center in Utah. U.S. orders typically arrive within 2–4 business days with full tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER & FDA DISCLAIMER ==================== -->
+    <footer class="bg-forest-950 text-forest-100/75 py-14 px-4 sm:px-6 lg:px-8 text-xs">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-b border-white/10 pb-8">
+                <div>
+                    <span class="font-display font-extrabold text-xl text-white tracking-tight">METABOLIX <span class="text-amber-400">PRO™</span></span>
+                    <p class="text-forest-100/60 mt-1">Evidence-Based Metabolic &amp; Cellular Wellness Formulations.</p>
+                </div>
+                <div class="flex flex-wrap gap-6 text-forest-100/80">
+                    <a href="#science" class="hover:text-white">Clinical Science</a>
+                    <button type="button" onclick="openSupplementModal()" class="hover:text-white">Supplement Facts</button>
+                    <a href="#bundles" class="hover:text-white">Bundles</a>
+                    <a href="#faq" class="hover:text-white">60-Day Guarantee</a>
+                </div>
+            </div>
+
+            <!-- FDA & Medical Disclaimer -->
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-[11px] leading-relaxed text-forest-100/65">
+                <strong>*FDA &amp; Medical Disclaimer:</strong> These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual weight management results vary depending on baseline metabolism, nutrition, and physical activity. Consult your physician before starting any dietary supplement, especially if you are pregnant, nursing, taking glucose-lowering medication, or have a pre-existing medical condition.
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-forest-100/50">
+                <p>&copy; 2026 METABOLIX PRO Bio-Nutrition LLC. All Rights Reserved.</p>
+                <p>Manufactured in the USA in an FDA-Registered, GMP-Certified Facility.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SUPPLEMENT FACTS MODAL ==================== -->
+    <div id="supplement-modal" role="dialog" aria-modal="true" aria-label="Supplement Facts Label"
+        class="fixed inset-0 z-50 bg-forest-950/80 backdrop-blur-xs hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-forest-900/15 relative max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-forest-700">Full Label Disclosure</span>
+                <button type="button" onclick="closeSupplementModal()" aria-label="Close" class="w-8 h-8 rounded-full bg-forest-50 hover:bg-forest-100 text-forest-900 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Standard FDA-Style Supplement Facts Box -->
+            <div class="border-2 border-black p-4 font-sans text-black bg-white">
+                <h3 class="font-display font-extrabold text-2xl leading-none border-b border-black pb-1">Supplement Facts</h3>
+                <p class="text-xs mt-1">Serving Size: 2 Veggie Capsules</p>
+                <p class="text-xs border-b-8 border-black pb-1.5">Servings Per Container: 30</p>
+
+                <div class="flex justify-between text-[11px] font-bold border-b border-black py-1">
+                    <span>Amount Per Serving</span>
+                    <span>% Daily Value</span>
+                </div>
+
+                <div class="divide-y divide-black/30 text-xs">
+                    <div class="py-1.5 flex justify-between">
+                        <span><strong>Chromium</strong> (as Chromium Picolinate)</span>
+                        <span class="font-bold">200 mcg (571%)</span>
+                    </div>
+                    <div class="py-1.5 flex justify-between">
+                        <span><strong>Berberine HCl</strong> (from Berberis aristata)</span>
+                        <span class="font-bold">400 mg †</span>
+                    </div>
+                    <div class="py-1.5 flex justify-between">
+                        <span><strong>Green Tea Phytosome</strong> (Decaf, 40% EGCG)</span>
+                        <span class="font-bold">300 mg †</span>
+                    </div>
+                    <div class="py-1.5 flex justify-between">
+                        <span><strong>Apple Cider Vinegar Powder</strong> (5% Acetic Acid)</span>
+                        <span class="font-bold">250 mg †</span>
+                    </div>
+                    <div class="py-1.5 flex justify-between">
+                        <span><strong>L-Theanine</strong> (99% Pure)</span>
+                        <span class="font-bold">150 mg †</span>
+                    </div>
+                    <div class="py-1.5 flex justify-between border-b-4 border-black">
+                        <span><strong>Grains of Paradise Extract</strong> (12.5% 6-Paradol)</span>
+                        <span class="font-bold">40 mg †</span>
+                    </div>
+                </div>
+
+                <p class="text-[10px] mt-1.5 leading-tight">
+                    † Daily Value (DV) not established.<br>
+                    <strong>Other Ingredients:</strong> Hypromellose (Vegetable Capsule), Organic Rice Hull Concentrate. Free of gluten, dairy, soy, artificial dyes, and stimulants.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE-OUT SHOPPING CART & INSTANT CHECKOUT DRAWER ==================== -->
+    <div id="cart-drawer-overlay" class="fixed inset-0 z-50 bg-forest-950/70 backdrop-blur-xs hidden">
+        <aside class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col justify-between">
+            
+            <!-- Cart Header -->
+            <div class="p-5 border-b border-forest-900/10 flex items-center justify-between bg-forest-50">
+                <div class="flex items-center gap-2.5">
+                    <i class="fa-solid fa-bag-shopping text-forest-900 text-lg"></i>
+                    <h3 class="font-display font-extrabold text-lg text-forest-950">Your Wellness Cart</h3>
+                </div>
+                <button id="close-cart-btn" type="button" aria-label="Close Cart" class="w-9 h-9 rounded-xl bg-white border border-forest-900/10 text-forest-900 hover:bg-forest-100 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Free Shipping Progress Bar -->
+            <div class="px-5 py-3 bg-forest-900 text-white text-xs">
+                <div class="flex items-center justify-between mb-1.5">
+                    <span id="shipping-status-text" class="font-medium">Add $100+ to unlock <strong>FREE Priority Shipping</strong></span>
+                    <span id="shipping-progress-pct" class="font-bold text-amber-400">0%</span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-white/15 overflow-hidden">
+                    <div id="shipping-progress-bar" class="h-full bg-amber-400 transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Cart Items Container -->
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- Cart Footer & Instant Checkout -->
+            <div id="cart-footer" class="p-5 border-t border-forest-900/10 bg-cream space-y-4">
+                <div class="space-y-1.5 text-sm">
+                    <div class="flex justify-between text-forest-800/80">
+                        <span>Shipping</span>
+                        <span id="cart-shipping-cost" class="font-semibold">$7.95</span>
+                    </div>
+                    <div class="flex justify-between text-forest-950 font-display font-extrabold text-lg pt-1 border-t border-forest-900/10">
+                        <span>Estimated Total</span>
+                        <span id="cart-subtotal">$0.00</span>
+                    </div>
+                </div>
+
+                <button id="proceed-checkout-btn" type="button"
+                    class="w-full py-4 rounded-2xl bg-forest-900 hover:bg-forest-800 text-white font-display font-bold text-sm shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-40">
+                    <i class="fa-solid fa-lock text-amber-400"></i>
+                    <span>Proceed to Express Checkout</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- ==================== INSTANT CHECKOUT MODAL ==================== -->
+    <div id="checkout-modal" role="dialog" aria-modal="true" aria-label="Express Checkout"
+        class="fixed inset-0 z-50 bg-forest-950/80 backdrop-blur-xs hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-forest-900/15 relative max-h-[92vh] overflow-y-auto">
+            <button type="button" onclick="closeCheckoutModal()" aria-label="Close Checkout"
+                class="absolute top-5 right-5 w-9 h-9 rounded-full bg-forest-50 hover:bg-forest-100 text-forest-900 flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Checkout Form View -->
+            <div id="checkout-form-view">
+                <div class="mb-6">
+                    <span class="text-xs font-bold uppercase tracking-wider text-forest-700">256-Bit SSL Encrypted Checkout</span>
+                    <h3 class="font-display font-extrabold text-2xl text-forest-950 mt-0.5">Complete Your Order</h3>
+                </div>
+
+                <form id="express-checkout-form" class="space-y-4 text-sm">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-forest-900 mb-1">Full Name *</label>
+                            <input type="text" id="chk-name" required placeholder="Sarah Jenkins"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-forest-900/20 focus:outline-none focus:border-forest-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-forest-900 mb-1">Email for Tracking *</label>
+                            <input type="email" id="chk-email" required placeholder="sarah@example.com"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-forest-900/20 focus:outline-none focus:border-forest-900">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-forest-900 mb-1">Shipping Address *</label>
+                        <input type="text" required placeholder="742 Evergreen Terrace, Apt 4B"
+                            class="w-full px-3.5 py-2.5 rounded-xl border border-forest-900/20 focus:outline-none focus:border-forest-900">
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                        <div class="col-span-2 sm:col-span-1">
+                            <label class="block text-xs font-bold text-forest-900 mb-1">City *</label>
+                            <input type="text" required placeholder="Austin"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-forest-900/20 focus:outline-none focus:border-forest-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-forest-900 mb-1">State *</label>
+                            <input type="text" required placeholder="TX"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-forest-900/20 focus:outline-none focus:border-forest-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-forest-900 mb-1">ZIP *</label>
+                            <input type="text" required placeholder="78701"
+                                class="w-full px-3.5 py-2.5 rounded-xl border border-forest-900/20 focus:outline-none focus:border-forest-900">
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-forest-50 border border-forest-900/10 flex items-center justify-between">
+                        <span class="font-bold text-forest-950">Order Total Due:</span>
+                        <span id="checkout-final-amount" class="font-display font-extrabold text-xl text-forest-900">$0.00</span>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-2xl bg-amber-400 hover:bg-amber-300 text-forest-950 font-display font-extrabold text-base shadow-lg transition-all">
+                        Place Order Now &rarr;
+                    </button>
+                </form>
+            </div>
+
+            <!-- Order Confirmation Receipt View -->
+            <div id="checkout-success-view" class="hidden text-center py-6 space-y-4">
+                <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto text-3xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <span class="inline-block px-3 py-1 rounded-full bg-forest-100 text-forest-900 text-xs font-bold">
+                    ORDER #MP-84920 CONFIRMED
+                </span>
+                <h3 class="font-display font-extrabold text-2xl text-forest-950">Thank You for Your Order!</h3>
+                <p id="checkout-receipt-msg" class="text-sm text-forest-800/80 leading-relaxed"></p>
+                <button type="button" onclick="closeCheckoutModal()" class="px-6 py-3 rounded-xl bg-forest-900 text-white font-display font-bold text-sm">
+                    Continue Browsing
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script>
+        // 1. PRODUCT CATALOG
+        const catalog = {
+            starter: {
+                id: 'starter',
+                name: 'METABOLIX PRO — 1 Bottle Starter',
+                subtitle: '30-Day Supply (60 Capsules)',
+                price: 69,
+                bottles: 1
+            },
+            popular: {
+                id: 'popular',
+                name: 'METABOLIX PRO — 3 Bottles Bundle',
+                subtitle: '90-Day Supply + Free Meal Guide',
+                price: 177,
+                bottles: 3
+            },
+            best: {
+                id: 'best',
+                name: 'METABOLIX PRO — 6 Bottles Protocol',
+                subtitle: '180-Day Supply + 2 Free Bonuses',
+                price: 294,
+                bottles: 6
+            }
+        };
+
+        // 2. VERIFIED REVIEWS DATASET
+        const customerReviews = [
+            {
+                name: "Rebecca M.",
+                location: "Denver, CO",
+                result: "Down 19 lbs in 11 weeks",
+                tag: "fat-loss",
+                bundle: "6 Bottles Protocol",
+                quote: "After turning 42, my metabolism felt completely stuck even with daily walks. By week three on METABOLIX PRO, my jeans fit looser around my waist and I didn't feel drained."
+            },
+            {
+                name: "Marcus D.",
+                location: "Chicago, IL",
+                result: "Zero late-night sugar cravings",
+                tag: "cravings",
+                bundle: "3 Bottles Bundle",
+                quote: "My biggest weakness was raiding the pantry at 9 PM. Within 10 days of taking two capsules before breakfast, that constant urge for sweets just vanished."
+            },
+            {
+                name: "Elena K.",
+                location: "Seattle, WA",
+                result: "Steady focus without coffee jitters",
+                tag: "energy",
+                bundle: "3 Bottles Bundle",
+                quote: "I used to need three espressos just to get through afternoon meetings. Now I have smooth, clean energy from 8 AM until dinner and I'm down 14 lbs."
+            },
+            {
+                name: "David R.",
+                location: "Tampa, FL",
+                result: "Down 27 lbs & 3 waist sizes",
+                tag: "fat-loss",
+                bundle: "6 Bottles Protocol",
+                quote: "No weird stimulants, no upset stomach, and completely transparent ingredient dosages. Easily the highest quality metabolic formula I've ever used."
+            },
+            {
+                name: "Hannah W.",
+                location: "Boston, MA",
+                result: "Portion control feels effortless",
+                tag: "cravings",
+                bundle: "3 Bottles Bundle",
+                quote: "I feel satisfied after normal-sized meals instead of thinking about snacks an hour later. Paired with the 21-day guide, I lost 16 lbs effortlessly."
+            },
+            {
+                name: "Jason T.",
+                location: "Phoenix, AZ",
+                result: "Better workouts & faster recovery",
+                tag: "energy",
+                bundle: "6 Bottles Protocol",
+                quote: "I actually sweat more during light cardio now—you can tell the Grains of Paradise and EGCG phytosome are genuinely firing up thermogenesis."
+            }
+        ];
+
+        // 3. RENDER FILTERABLE REVIEWS
+        const reviewsGrid = document.getElementById('reviews-grid');
+        function renderReviews(filterTag = 'all') {
+            const list = filterTag === 'all'
+                ? customerReviews
+                : customerReviews.filter(r => r.tag === filterTag);
+
+            reviewsGrid.innerHTML = list.map(rev => `
+                <article class="p-6 rounded-2xl bg-white border border-forest-900/10 shadow-2xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="px-2.5 py-0.5 rounded-full bg-forest-100 text-forest-800 text-[11px] font-bold">
+                                ${rev.result}
+                            </span>
+                        </div>
+                        <p class="text-sm text-forest-900/85 leading-relaxed mb-5">"${rev.quote}"</p>
+                    </div>
+
+                    <div class="pt-4 border-t border-forest-900/10 flex items-center justify-between text-xs">
+                        <div>
+                            <span class="font-display font-bold text-forest-950 block">${rev.name}</span>
+                            <span class="text-forest-700/75">${rev.location} • ${rev.bundle}</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-emerald-700 font-semibold">
+                            <i class="fa-solid fa-circle-check"></i> Verified Buyer
+                        </span>
+                    </div>
+                </article>
+            `).join('');
+        }
+        renderReviews('all');
+
+        document.querySelectorAll('.rev-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.rev-filter-btn').forEach(b => {
+                    b.classList.remove('bg-forest-900', 'text-white', 'active');
+                    b.classList.add('bg-white', 'text-forest-900');
+                });
+                btn.classList.remove('bg-white', 'text-forest-900');
+                btn.classList.add('bg-forest-900', 'text-white', 'active');
+                renderReviews(btn.dataset.tag);
+            });
+        });
+
+        // 4. INTERACTIVE WEIGHT LOSS & PROTOCOL ESTIMATOR
+        const currentWeightInput = document.getElementById('current-weight');
+        const goalWeightInput = document.getElementById('goal-weight');
+        const currentWeightVal = document.getElementById('current-weight-val');
+        const goalWeightVal = document.getElementById('goal-weight-val');
+        const calcLossLbs = document.getElementById('calc-loss-lbs');
+        const calcWeeks = document.getElementById('calc-weeks');
+        const calcKcal = document.getElementById('calc-kcal');
+        const calcBundleName = document.getElementById('calc-bundle-name');
+        let activityMultiplier = 1.0;
+        let recommendedBundleId = 'popular';
+
+        function recalculateEstimator() {
+            let curr = parseInt(currentWeightInput.value, 10);
+            let goal = parseInt(goalWeightInput.value, 10);
+
+            // Ensure goal is at least 5 lbs below current weight
+            if (goal >= curr) {
+                goal = Math.max(100, curr - 5);
+                goalWeightInput.value = goal;
+            }
+
+            currentWeightVal.textContent = curr;
+            goalWeightVal.textContent = goal;
+
+            const diff = curr - goal;
+            calcLossLbs.textContent = diff;
+
+            // Realistic healthy fat loss pace (~1.6 to 2.1 lbs/week with thermogenic support)
+            const weeks = Math.max(4, Math.round((diff / 1.8) * activityMultiplier));
+            calcWeeks.textContent = weeks;
+
+            const dailyBoost = Math.round(190 + (curr * 0.45));
+            calcKcal.textContent = `+${dailyBoost} kcal / day`;
+
+            if (diff <= 12) {
+                recommendedBundleId = 'starter';
+                calcBundleName.textContent = '1-Bottle Starter (30 Days)';
+            } else if (diff <= 28) {
+                recommendedBundleId = 'popular';
+                calcBundleName.textContent = '3-Bottle Protocol (90 Days)';
+            } else {
+                recommendedBundleId = 'best';
+                calcBundleName.textContent = '6-Bottle Protocol (180 Days)';
+            }
+        }
+
+        currentWeightInput.addEventListener('input', recalculateEstimator);
+        goalWeightInput.addEventListener('input', recalculateEstimator);
+
+        document.querySelectorAll('.activity-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.activity-btn').forEach(b => {
+                    b.classList.remove('border-2', 'border-forest-900', 'bg-forest-50', 'active');
+                    b.classList.add('border', 'border-forest-900/15');
+                });
+                btn.classList.remove('border', 'border-forest-900/15');
+                btn.classList.add('border-2', 'border-forest-900', 'bg-forest-50', 'active');
+                activityMultiplier = parseFloat(btn.dataset.multiplier);
+                recalculateEstimator();
+            });
+        });
+
+        document.getElementById('calc-add-btn').addEventListener('click', () => {
+            addBundleToCart(recommendedBundleId);
+        });
+        recalculateEstimator();
+
+        // 5. SHOPPING CART DRAWER & STATE MANAGEMENT
+        let cart = [];
+        const cartOverlay = document.getElementById('cart-drawer-overlay');
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const headerCartBadge = document.getElementById('header-cart-badge');
+        const cartSubtotalEl = document.getElementById('cart-subtotal');
+        const cartShippingEl = document.getElementById('cart-shipping-cost');
+        const shippingStatusText = document.getElementById('shipping-status-text');
+        const shippingProgressPct = document.getElementById('shipping-progress-pct');
+        const shippingProgressBar = document.getElementById('shipping-progress-bar');
+        const proceedCheckoutBtn = document.getElementById('proceed-checkout-btn');
+
+        function openCartDrawer() {
+            cartOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCartDrawer() {
+            cartOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('cart-trigger-btn').addEventListener('click', openCartDrawer);
+        document.getElementById('close-cart-btn').addEventListener('click', closeCartDrawer);
+        cartOverlay.addEventListener('click', (e) => {
+            if (e.target === cartOverlay) closeCartDrawer();
+        });
+
+        window.addBundleToCart = function(bundleId) {
+            const product = catalog[bundleId];
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === bundleId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartUI();
+            openCartDrawer();
+        };
+
+        window.changeCartQty = function(bundleId, delta) {
+            const idx = cart.findIndex(item => item.id === bundleId);
+            if (idx === -1) return;
+            cart[idx].qty += delta;
+            if (cart[idx].qty <= 0) {
+                cart.splice(idx, 1);
+            }
+            updateCartUI();
+        };
+
+        function updateCartUI() {
+            const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+            headerCartBadge.textContent = totalItems;
+
+            // Free shipping threshold: $100
+            const threshold = 100;
+            const pct = Math.min(100, Math.round((subtotal / threshold) * 100));
+            shippingProgressBar.style.width = `${pct}%`;
+            shippingProgressPct.textContent = `${pct}%`;
+
+            const qualifiesFreeShipping = subtotal >= threshold || subtotal === 0;
+            const shippingCost = subtotal === 0 ? 0 : (subtotal >= threshold ? 0 : 7.95);
+
+            if (subtotal === 0) {
+                shippingStatusText.innerHTML = `Add $100+ to unlock <strong>FREE Priority Shipping</strong>`;
+            } else if (subtotal >= threshold) {
+                shippingStatusText.innerHTML = `<i class="fa-solid fa-circle-check text-amber-400 mr-1"></i> You unlocked <strong>FREE Priority Tracked Shipping!</strong>`;
+            } else {
+                const remaining = (threshold - subtotal).toFixed(2);
+                shippingStatusText.innerHTML = `Add <strong>$${remaining}</strong> more for <strong>FREE Shipping</strong>`;
+            }
+
+            cartShippingEl.textContent = subtotal === 0 ? '$0.00' : (shippingCost === 0 ? 'FREE' : `$${shippingCost.toFixed(2)}`);
+            const grandTotal = subtotal + shippingCost;
+            cartSubtotalEl.textContent = `$${grandTotal.toFixed(2)}`;
+            proceedCheckoutBtn.disabled = cart.length === 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="text-center py-14 space-y-3">
+                        <div class="w-14 h-14 rounded-2xl bg-forest-50 text-forest-700 flex items-center justify-center mx-auto text-2xl">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <p class="font-display font-bold text-forest-950">Your cart is currently empty</p>
+                        <p class="text-xs text-forest-700/80 max-w-xs mx-auto">Select a 1, 3, or 6-bottle METABOLIX PRO protocol to begin your metabolic transformation.</p>
+                    </div>
+                `;
+            } else {
+                cartItemsContainer.innerHTML = cart.map(item => `
+                    <div class="p-4 rounded-2xl bg-cream border border-forest-900/10 flex items-center justify-between gap-3">
+                        <div>
+                            <h4 class="font-display font-bold text-sm text-forest-950">${item.name}</h4>
+                            <span class="text-xs text-forest-700 block mt-0.5">${item.subtitle}</span>
+                            <span class="font-display font-extrabold text-sm text-forest-900 block mt-1">$${(item.price * item.qty).toFixed(2)}</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white border border-forest-900/15 rounded-xl p-1">
+                            <button type="button" onclick="changeCartQty('${item.id}', -1)" aria-label="Decrease quantity"
+                                class="w-7 h-7 rounded-lg hover:bg-forest-50 text-forest-900 font-bold text-xs flex items-center justify-center">
+                                &minus;
+                            </button>
+                            <span class="text-xs font-bold w-5 text-center">${item.qty}</span>
+                            <button type="button" onclick="changeCartQty('${item.id}', 1)" aria-label="Increase quantity"
+                                class="w-7 h-7 rounded-lg hover:bg-forest-50 text-forest-900 font-bold text-xs flex items-center justify-center">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+        updateCartUI();
+
+        // 6. EXPRESS CHECKOUT MODAL LOGIC
+        const checkoutModal = document.getElementById('checkout-modal');
+        const checkoutFormView = document.getElementById('checkout-form-view');
+        const checkoutSuccessView = document.getElementById('checkout-success-view');
+        const checkoutFinalAmount = document.getElementById('checkout-final-amount');
+        const expressCheckoutForm = document.getElementById('express-checkout-form');
+
+        proceedCheckoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) return;
+            closeCartDrawer();
+            checkoutFinalAmount.textContent = cartSubtotalEl.textContent;
+            checkoutFormView.classList.remove('hidden');
+            checkoutSuccessView.classList.add('hidden');
+            checkoutModal.classList.remove('hidden');
+            checkoutModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        });
+
+        window.closeCheckoutModal = function() {
+            checkoutModal.classList.add('hidden');
+            checkoutModal.classList.remove('flex');
+            document.body.style.overflow = '';
+        };
+
+        expressCheckoutForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const customerName = document.getElementById('chk-name').value.trim();
+            const customerEmail = document.getElementById('chk-email').value.trim();
+
+            document.getElementById('checkout-receipt-msg').innerHTML = `
+                Thank you, <strong>${customerName}</strong>! Your order receipt and priority tracking link have been dispatched to <strong>${customerEmail}</strong>.
+            `;
+
+            cart = [];
+            updateCartUI();
+            expressCheckoutForm.reset();
+            checkoutFormView.classList.add('hidden');
+            checkoutSuccessView.classList.remove('hidden');
+        });
+
+        // 7. SUPPLEMENT FACTS MODAL
+        const supplementModal = document.getElementById('supplement-modal');
+        window.openSupplementModal = function() {
+            supplementModal.classList.remove('hidden');
+            supplementModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        };
+        window.closeSupplementModal = function() {
+            supplementModal.classList.add('hidden');
+            supplementModal.classList.remove('flex');
+            document.body.style.overflow = '';
+        };
+        supplementModal.addEventListener('click', (e) => {
+            if (e.target === supplementModal) closeSupplementModal();
+        });
+
+        // 8. FAQ ACCORDION & MOBILE NAV
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const parent = trigger.closest('.faq-item');
+                parent.classList.toggle('open');
+            });
+        });
+
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobilePanel = document.getElementById('mobile-nav-panel');
+        mobileToggle.addEventListener('click', () => {
+            mobilePanel.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobilePanel.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
